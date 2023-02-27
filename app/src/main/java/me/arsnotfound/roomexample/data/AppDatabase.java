@@ -19,7 +19,11 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
-    private final static List<Film> PREPOPULATE_DATA = Arrays.asList(new Film("Люди в чёрном", 4.5f), new Film("Аватар", 4.7f), new Film("Чебурашка", 4.8f));
+    private final static List<Film> PREPOPULATE_DATA = Arrays.asList(
+            new Film("Люди в чёрном", 4.5f),
+            new Film("Аватар", 4.7f),
+            new Film("Чебурашка", 4.8f)
+    );
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

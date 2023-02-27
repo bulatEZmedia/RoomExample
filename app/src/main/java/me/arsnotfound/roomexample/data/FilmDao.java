@@ -1,5 +1,6 @@
 package me.arsnotfound.roomexample.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -23,5 +24,5 @@ public interface FilmDao {
     void deleteFile(Film film);
 
     @Query("SELECT * FROM film")
-    List<Film> getAllFilms();
+    LiveData<List<Film>> getAllFilms();
 }
