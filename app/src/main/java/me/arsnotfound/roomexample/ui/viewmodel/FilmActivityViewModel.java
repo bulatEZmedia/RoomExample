@@ -2,37 +2,38 @@ package me.arsnotfound.roomexample.ui.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-
-import java.util.List;
 
 import me.arsnotfound.roomexample.data.Film;
 import me.arsnotfound.roomexample.data.FilmDao;
 
-public class MainActivityViewModel extends ViewModel {
-    LiveData<List<Film>> filmsLiveData;
+public class FilmActivityViewModel extends ViewModel {
+    private LiveData<Film> filmLiveData;
 
-    public LiveData<List<Film>> getFilmsLiveData() {
-        return filmsLiveData;
+    private FilmDao dao;
+
+    public LiveData<Film> getFilmLiveData(int filmID) {
+        filmLiveData = dao.getFilmByID(filmID);
+        return filmLiveData;
     }
 
-    public MainActivityViewModel(FilmDao filmDao) {
-        this.filmsLiveData = filmDao.getAllFilms();
+    public FilmActivityViewModel(FilmDao dao) {
+        this.dao = dao;
     }
 
     public static class Factory implements ViewModelProvider.Factory {
         FilmDao filmDao;
 
-        public Factory(FilmDao filmDao) {
-            this.filmDao = filmDao;
+        public Factory(FilmDao dao) {
+            this.filmDao = dao;
         }
 
         @NonNull
         @Override
         public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-            return (T) new MainActivityViewModel(filmDao);
+            return (T) new FilmActivityViewModel(filmDao);
         }
     }
-
 }

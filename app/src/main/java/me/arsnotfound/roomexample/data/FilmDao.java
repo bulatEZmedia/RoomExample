@@ -21,8 +21,14 @@ public interface FilmDao {
     void updateFilm(Film film);
 
     @Delete
-    void deleteFile(Film film);
+    void deleteFilm(Film film);
+
+    @Query("DELETE FROM film WHERE id = :id")
+    int deleteFilm(int id);
 
     @Query("SELECT * FROM film")
     LiveData<List<Film>> getAllFilms();
+
+    @Query("SELECT * FROM film WHERE id = :id")
+    LiveData<Film> getFilmByID(int id);
 }
