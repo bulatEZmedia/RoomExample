@@ -10,7 +10,7 @@
         android:id="@+id/name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Название"
+        android:text="name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="5dp"/>
@@ -19,16 +19,20 @@
         android:id="@+id/name_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_tv"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="5dp"
+        android:hint="name"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="5dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_tv" />
+
+
 
     <TextView
         android:id="@+id/rate_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Оценка"
+        android:text="Score"
         app:layout_constraintTop_toBottomOf="@id/name_et"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="5dp"/>
@@ -37,29 +41,51 @@
         android:id="@+id/rate_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rate_tv"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="5dp"
+        android:hint="score"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="5dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rate_tv" />
+
+    <TextView
+        android:id="@+id/subject_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Subject"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="158dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/subject_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="subject"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject_tv" />
 
     <Button
         android:id="@+id/update_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rate_et"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/delete_btn"
+        android:layout_margin="5dp"
         android:text="Сохранить"
-        android:layout_margin="5dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject_et" />
 
     <Button
         android:id="@+id/delete_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rate_et"
-        app:layout_constraintStart_toEndOf="@id/update_btn"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="5dp"
         android:text="Удалить"
-        android:layout_margin="5dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,8 @@ public class FilmActivity extends AppCompatActivity {
 
     private EditText nameET;
 
+    private EditText subjectET;
+
     private EditText rateET;
 
     private Button updateBtn;
@@ -48,6 +50,7 @@ public class FilmActivity extends AppCompatActivity {
 
         nameET = findViewById(R.id.name_et);
         rateET = findViewById(R.id.rate_et);
+        subjectET = findViewById(R.id.subject_et);
         updateBtn = findViewById(R.id.update_btn);
         deleteBtn = findViewById(R.id.delete_btn);
 
@@ -55,13 +58,15 @@ public class FilmActivity extends AppCompatActivity {
             if (film != null) {
                 nameET.setText(film.getName());
                 rateET.setText(String.format(Locale.getDefault(), "%f", film.getScore()));
+                subjectET.setText(film.getSubject());
             }
         });
 
         updateBtn.setOnClickListener(view -> {
             Film newFilm = new Film(
                     nameET.getText().toString(),
-                    Float.parseFloat(rateET.getText().toString())
+                    Float.parseFloat(rateET.getText().toString()),
+                    subjectET.getText().toString()
             );
             if (filmID >= 0) {
                 newFilm.setId(filmID);

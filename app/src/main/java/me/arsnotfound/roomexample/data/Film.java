@@ -15,10 +15,14 @@ public class Film {
     @ColumnInfo(name = "score")
     private float score;
 
-    public Film(String name, float score) {
+    @ColumnInfo(name = "subject")
+    private final String subject;
+
+    public Film(String name, float score, String subject) {
         this.id = 0;
         this.name = name;
         this.score = score;
+        this.subject = subject;
     }
 
     public int getId() {
@@ -39,6 +43,10 @@ public class Film {
 
     public void setScore(float score) {
         this.score = score;
+    }
+
+    public String getSubject() {
+        return subject;
     }
 }
 
