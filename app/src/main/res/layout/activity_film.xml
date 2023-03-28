@@ -17,7 +17,7 @@
 
     <EditText
         android:id="@+id/name_et"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:hint="name"
@@ -39,7 +39,7 @@
 
     <EditText
         android:id="@+id/rate_et"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:hint="score"
@@ -54,9 +54,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Subject"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="158dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/rate_et"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp" />
 
     <EditText
         android:id="@+id/subject_et"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subject_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/rate_et" />
 
     <Button
         android:id="@+id/update_btn"

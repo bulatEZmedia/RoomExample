@@ -29,6 +29,8 @@ public class FilmRecycleViewAdapter extends RecyclerView.Adapter<FilmRecycleView
         private final TextView filmNameTV;
         private final TextView filmScoreTV;
 
+        private final TextView filmSubjectTV;
+
         private Film film;
 
         private OnItemClickListener listener;
@@ -38,6 +40,7 @@ public class FilmRecycleViewAdapter extends RecyclerView.Adapter<FilmRecycleView
 
             filmNameTV = view.findViewById(R.id.film_name_tv);
             filmScoreTV = view.findViewById(R.id.film_score_tv);
+            filmSubjectTV = view.findViewById(R.id.film_subject_tv);
             this.listener = listener;
 
             view.setOnClickListener(v -> this.listener.onItemClick(film));
@@ -47,6 +50,7 @@ public class FilmRecycleViewAdapter extends RecyclerView.Adapter<FilmRecycleView
             this.film = film;
             filmNameTV.setText(film.getName());
             filmScoreTV.setText(String.format(Locale.getDefault(), "%f", film.getScore()));
+            filmSubjectTV.setText(film.getSubject());
         }
     }
 

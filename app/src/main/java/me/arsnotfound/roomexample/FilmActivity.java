@@ -22,6 +22,7 @@ public class FilmActivity extends AppCompatActivity {
 
     private FilmActivityViewModel viewModel;
 
+
     private EditText nameET;
 
     private EditText subjectET;
